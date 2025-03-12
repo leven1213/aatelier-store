@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "aatelier-store",
+			"path": "."
+		}
+	],
+	"settings": {
+		"tailwindCSS.experimental.configFile": "tailwind.config.ts"
+	}
+}
