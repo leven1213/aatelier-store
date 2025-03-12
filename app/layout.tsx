@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 /*import { Inter, Cormorant } from "next/font/google";*/
 import "@/assets/styles/globals.css";
 import { APP_DESCRIPTION, APP_NAME, SERVER_URL } from '@/lib/constants';
 
-const interSans = Inter({
-  variable: "--font-inter",
+const manropeSans = Manrope({
+  variable: "--font-Manrope",
   subsets: ["latin"],
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${interSans.className} antialiased`}
+        className={`${manropeSans.className} antialiased`}
       >
         {children}
       </body>

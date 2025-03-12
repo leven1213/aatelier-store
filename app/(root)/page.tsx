@@ -1,12 +1,16 @@
-/*export const metadata = {
-  title: 'Home',
-}
-import { Button } from "@/components/ui/button";*/
+import ProductList from "@/components/shared/header/product/product-list";
+import sampleData from "@/db/sample-data";
 
 const Homepage = () => {
-  return <>Aatelier
-    { /*<Button>Shop Now</Button> */}
-  </>;
-}
- 
+  console.log(sampleData);
+  return (
+    <>
+      <ProductList 
+        data={sampleData.products} 
+        title="New Arrivals" 
+        limit={4} />
+    </>
+  );
+};
+
 export default Homepage;
