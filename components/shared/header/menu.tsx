@@ -14,15 +14,15 @@ import {
 const Menu = () => {
   return (
     <div className="flex justify-end gap-3">
-      <nav className="hidden md:flex w-full max-w-xs gap-1">
+      <nav className="hidden md:flex w-full max-w-xs gap-1 uppercase">
         <Button asChild variant="ghost">
           <Link href="/cart">
             <ShoppingCart />
           </Link>
         </Button>
-        <Button asChild>
+        <Button asChild variant="ghost">
           <Link href="/sign-in">
-            <UserIcon /> Sign In
+            <UserIcon />
           </Link>
         </Button>
       </nav>
@@ -32,16 +32,16 @@ const Menu = () => {
             <EllipsisVertical />
           </SheetTrigger>
           <SheetContent className="bg-white flex flex-col items-start">
-            <SheetHeader>
-              <SheetTitle>Menu</SheetTitle>
+            <SheetHeader className="uppercase">
+              <SheetTitle></SheetTitle>
               <Button asChild variant="ghost">
                 <Link href="/cart">
-                  <ShoppingCart /> My Cart
+                  <ShoppingCart /> Bag
                 </Link>
               </Button>
-              <Button asChild>
+              <Button asChild variant="ghost">
                 <Link href="/sign-in">
-                  <UserIcon /> Sign In
+                  <UserIcon /> Login
                 </Link>
               </Button>
               <SheetDescription></SheetDescription>
