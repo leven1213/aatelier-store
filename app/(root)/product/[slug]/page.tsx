@@ -17,19 +17,20 @@ const ProductDetailsPage = async (props: {
   return (
     <>
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-5">
-          {/* Images Column */}
-          <div className="col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-6">
+          {/* Images Column: Mobile View */}
+          <div className="col-span-4 md:hidden">
             {/* Images Component */}
             <ProductImages images={product.images} />
           </div>
+
           {/* Details Column */}
-          <div className="col-span-2 p-5">
-            <div className="flex flex-col gap-6">
-              <p>
-                {product.brand} {product.category}
+          <div className="col-span-2 lg:sticky lg:top-25 h-fit self-start">
+            <div className="flex flex-col gap-3">
+              <p className="uppercase text-xs">
+                {product.brand} / {product.category}
               </p>
-              <h1 className="h3-bold">{product.name}</h1>
+              <h1 className="font-semibold">{product.name}</h1>
               <p>
                 {product.rating} of {product.numReviews} Reviews
               </p>
@@ -45,10 +46,17 @@ const ProductDetailsPage = async (props: {
               <p>{product.description}</p>
             </div>
           </div>
+          
+          {/* Images Column */}
+          <div className="col-span-4 hidden md:flex">
+            {/* Images Component */}
+            <ProductImages images={product.images} />
+          </div>
+
           {/* Action Column */}
-          <div>
+          <div className="col-span-2 sticky top-25 h-fit self-start">
             <Card>
-              <CardContent className="p-4">
+              <CardContent className="pl-4">
                 <div className="mb-2 flex justify-between">
                   <div>Price</div>
                   <div>

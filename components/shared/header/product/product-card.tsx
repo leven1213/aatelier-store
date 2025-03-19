@@ -21,10 +21,10 @@ const ProductCard = ({ product }: { product: Product }) => {
       <CardContent className="pt-2 grid gap-1">
         <Link href={`/product/${product.slug}`}>
           <div className="text-xs uppercase"> {product.brand}</div>
-          <h2 className="font-light">{product.name}</h2>
+          <h2 className="font-light text-[0.9rem] lg:text-[1rem]">{product.name}</h2>
         </Link>
         {product.stock > 0 ? (
-          <ProductPrice value={Number(product.price)} className="font-bold" />
+          <ProductPrice value={Number(product.price)} className="font-bold text-[1rem] lg:text-lg" />
         ) : (
           <p className="text-destructive">Out of Stock</p>
         )}

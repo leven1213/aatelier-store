@@ -1,5 +1,6 @@
 "use client";
-import { EllipsisVertical, ShoppingCart, UserIcon } from "lucide-react";
+
+import { AlignJustify, ShoppingCart, UserIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,27 +12,32 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+const SHEET_SIDES = ["left"] as const
+
+type Menu = (typeof SHEET_SIDES)[number]
+
 const Menu = () => {
   return (
     <div className="flex justify-end gap-3">
-      <nav className="hidden md:flex w-full max-w-xs gap-1 uppercase">
-        <Button asChild variant="ghost">
-          <Link href="/cart">
-            <ShoppingCart />
-          </Link>
-        </Button>
+      <nav className="w-full max-w-xs gap-1 uppercase">
         <Button asChild variant="ghost">
           <Link href="/sign-in">
             <UserIcon />
           </Link>
         </Button>
+        <Button asChild variant="ghost">
+          <Link href="/cart">
+            <ShoppingCart />
+          </Link>
+        </Button>
       </nav>
       <nav className="md:hidden">
-        <Sheet>
+      {SHEET_SIDES.map((left) => (
+        <Sheet key={left}>
           <SheetTrigger className="align-middle">
-            <EllipsisVertical />
+            <AlignJustify />
           </SheetTrigger>
-          <SheetContent className="bg-white flex flex-col items-start">
+          <SheetContent side={left} className="w-full bg-white flex flex-col items-start">
             <SheetHeader className="uppercase">
               <SheetTitle></SheetTitle>
               <Button asChild variant="ghost">
@@ -48,6 +54,7 @@ const Menu = () => {
             </SheetHeader>
           </SheetContent>
         </Sheet>
+        ))}
       </nav>
     </div>
   );
