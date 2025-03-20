@@ -7,3 +7,8 @@ export const SERVER_URL =
     'http://localhost:3000';
 
 export const LATEST_PRODUCTS_LIMIT = Number(process.env.LATEST_PRODUCTS_LIMIT) || 8;
+
+export const signInDefaultValues = {
+    email: '',
+    password: '',
+};
