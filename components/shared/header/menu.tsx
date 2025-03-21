@@ -1,6 +1,6 @@
 "use client";
 
-import { AlignJustify, ShoppingCart, UserIcon } from "lucide-react";
+import { AlignJustify, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +11,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import UserButton from "./user-button";
 
 const SHEET_SIDES = ["left"] as const
 
@@ -20,11 +21,7 @@ const Menu = () => {
   return (
     <div className="flex justify-end gap-3">
       <nav className="w-full max-w-xs gap-1 uppercase">
-        <Button asChild variant="ghost">
-          <Link href="/sign-in">
-            <UserIcon />
-          </Link>
-        </Button>
+        <UserButton />
         <Button asChild variant="ghost">
           <Link href="/cart">
             <ShoppingCart />
@@ -45,11 +42,7 @@ const Menu = () => {
                   <ShoppingCart /> Bag
                 </Link>
               </Button>
-              <Button asChild variant="ghost">
-                <Link href="/sign-in">
-                  <UserIcon /> Login
-                </Link>
-              </Button>
+              <UserButton />
               <SheetDescription></SheetDescription>
             </SheetHeader>
           </SheetContent>
