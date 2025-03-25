@@ -18,7 +18,7 @@ type Menu = (typeof SHEET_SIDES)[number]
 const Menu = () => {
   return (
     <div className="flex justify-end gap-3">
-      <nav className="w-full max-w-xs gap-1 uppercase">
+      <nav className="w-full flex gap-1 uppercase">
         <UserButton />
         <Button asChild variant="ghost">
           <Link href="/cart">
@@ -40,7 +40,7 @@ const Menu = () => {
                   <ShoppingCart /> Bag
                 </Link>
               </Button>
-              { /* <UserButton /> */ }
+              <UserButton /> 
               <SheetDescription></SheetDescription>
             </SheetHeader>
           </SheetContent>
