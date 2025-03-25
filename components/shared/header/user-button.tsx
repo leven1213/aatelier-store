@@ -50,6 +50,7 @@ const UserButton = async () => {
               </div>
             </div>
           </DropdownMenuLabel>
+
           <DropdownMenuItem className="p-0 mb-1">
             <form className="w-full">
               <Button
@@ -60,7 +61,7 @@ const UserButton = async () => {
                 Sign Out
               </Button>
             </form>
-          </DropdownMenuItem>
+          </DropdownMenuItem> 
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

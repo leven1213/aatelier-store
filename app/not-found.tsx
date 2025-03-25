@@ -1,4 +1,3 @@
-"use client";  
 import Header from "@/components/shared/header";
 import Footer from "@/components/footer";
 import { Link } from "@/components/ui/link";

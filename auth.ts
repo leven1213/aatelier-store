@@ -3,7 +3,8 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/db/prisma";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compareSync } from "bcrypt-ts-edge";
-import type { NextAuthConfig } from "next-auth";
+// import type { NextAuthConfig } from "next-auth";
+import { authConfig } from "./auth.config";
 
 export const config = {
   pages: {
@@ -13,7 +14,7 @@ export const config = {
   session: {
     // default is `"jwt"`,
     // an encrypted JWT (JWE) stored in the session cookie
-    strategy: "jwt",
+    strategy: "jwt" as const,
 
     // Seconds - How long until an idle session expires and is no longer valid.
     maxAge: 30 * 24 * 60 * 60, // 30 days
@@ -57,6 +58,7 @@ export const config = {
     }),
   ],
   callbacks: {
+    ...authConfig.callbacks,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async session({ session, user, trigger, token }: any) {
         // Set user ID from the token
@@ -69,7 +71,7 @@ export const config = {
         return session;
     },
   }, 
-} satisfies NextAuthConfig; // ensures that object structure is compatible with NextAuthConfig
+} // satisfies NextAuthConfig; ensures that object structure is compatible with NextAuthConfig
 
 export const { handlers, auth, signIn, signOut } = NextAuth(config);
 // Handlers is an object that contains HTTP handlers for diff endpoints

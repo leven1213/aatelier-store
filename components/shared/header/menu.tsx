@@ -1,5 +1,3 @@
-"use client";
-
 import { AlignJustify, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -42,7 +40,7 @@ const Menu = () => {
                   <ShoppingCart /> Bag
                 </Link>
               </Button>
-              <UserButton />
+              { /* <UserButton /> */ }
               <SheetDescription></SheetDescription>
             </SheetHeader>
           </SheetContent>
