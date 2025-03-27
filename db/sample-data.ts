@@ -19,7 +19,7 @@ const sampleData = {
     {
       name: "Distressed Dyed Denim Jacket",
       slug: "rebel-rebel-distressed-dyed-denim-jacket",
-      category: "Men&#39;s Jackets",
+      category: "Men' Jackets",
       description: "Non-stretch denim jacket that gives off a grunge attitude",
       blurb: null,
       // An array – A product can have more than one image
@@ -38,7 +38,7 @@ const sampleData = {
     {
       name: "Coral Oversized Stretch T-Shirt",
       slug: "aura-oversized-stretch-tshirt",
-      category: "Men&#39;s T-Shirts",
+      category: "Men' T-Shirts",
       description:
         "Crafted from 100% cotton for premium comfort and breathability",
       blurb: null,
@@ -57,7 +57,7 @@ const sampleData = {
     {
       name: "Green Sweat Pullover Hoodie",
       slug: "caxxual-sweat-pullover-hoodie",
-      category: "Men&#39;s Sweatshirts & Hoodies",
+      category: "Men' Sweatshirts & Hoodies",
       description: "Cotton hoodie with rib-knit cuffs",
       blurb: null,
       images: [
@@ -75,7 +75,7 @@ const sampleData = {
     {
       name: "Grey Sleeveless Hoodie",
       slug: "homme-sleeveless-hoodie",
-      category: "Men&#39;s Sweatshirts & Hoodies",
+      category: "Men' Sweatshirts & Hoodies",
       description: "Streamlined design with flexible stretch fabric",
       blurb: null,
       images: [
@@ -93,7 +93,7 @@ const sampleData = {
     {
       name: "Pink Turtleneck Blouse",
       slug: "la-jeune-pink-turtleneck-blouse",
-      category: "Women&#39;s Blouses",
+      category: "Women' Blouses",
       description:
         "Casual chic in a semi-sheer viscose-blend long-sleeved blouse",
       blurb: null,
@@ -112,7 +112,7 @@ const sampleData = {
     {
       name: "Off White Maxie Shirt Dress",
       slug: "villanelle-maxie-shirt-dress",
-      category: "Women&#39;s Dresses",
+      category: "Women' Dresses",
       description:
         "Feel confident in a shirt-style long dress cinched with a waist belt",
       blurb: null,
@@ -131,11 +131,11 @@ const sampleData = {
     {
       name: "Fitted Tailoured Blazer",
       slug: "stefani-fitted-tailoured-blazer",
-      category: "Women&#39;s Jackets & Coats",
+      category: "Women' Jackets & Coats",
       description:
         "Powerful jet-black blazer with welt pockets during business hours",
       blurb:
-        "Explore the Italian designer&#39;s collection of power suits, featuring sharp tailoring and timeless elegance",
+        "Explore the Italian designer' collection of power suits, featuring sharp tailoring and timeless elegance",
       images: [
         "/images/sample-products/p7-1.jpg",
         "/images/sample-products/p7-2.jpg",
@@ -151,7 +151,7 @@ const sampleData = {
     {
       name: "Off Shoulder Strap Mini Dress",
       slug: "viva-la-diva-off-shoulder-strap-mini-dress",
-      category: "Women&#39;s Dresses",
+      category: "Women' Dresses",
       description:
         "Feel like heaven in an off shoulder mini dress with draping panels",
       blurb: null,
