@@ -6,14 +6,14 @@ import { Product } from "@/types";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <Card className="w-full max-w-sm pb-4 pr-3">
+    <Card className="w-full max-w-sm pb-4 pr-3 lg:pr-1.5">
       <CardHeader className="">
         <Link href={`/product/${product.slug}`}>
           <Image
             src={product.images[0]}
             alt={product.name}
-            height={300}
-            width={300}
+            height={400}
+            width={400}
             priority={true}
           />
         </Link>

@@ -18,7 +18,7 @@ const UserButton = async () => {
     return (
       <Button asChild variant={'ghost'}>
         <Link href="/sign-in">
-          <UserIcon /> Sign in
+          <UserIcon />
         </Link>
       </Button>
     );
