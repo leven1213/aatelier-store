@@ -11,9 +11,9 @@ import {
 } from "@/components/ui/sheet";
 import UserButton from "./user-button";
 
-const SHEET_SIDES = ["left"] as const
+const SHEET_SIDES = ["left"] as const;
 
-type Menu = (typeof SHEET_SIDES)[number]
+type Menu = (typeof SHEET_SIDES)[number];
 
 const Menu = () => {
   return (
@@ -27,24 +27,27 @@ const Menu = () => {
         </Button>
       </nav>
       <nav className="md:hidden">
-      {SHEET_SIDES.map((left) => (
-        <Sheet key={left}>
-          <SheetTrigger className="align-middle">
-            <AlignJustify />
-          </SheetTrigger>
-          <SheetContent side={left} className="w-full bg-white flex flex-col items-start">
-            <SheetHeader className="uppercase">
-              <SheetTitle></SheetTitle>
-              <Button asChild variant="ghost">
-                <Link href="/cart">
-                  <ShoppingCart /> Bag
-                </Link>
-              </Button>
-              <UserButton /> 
-              <SheetDescription></SheetDescription>
-            </SheetHeader>
-          </SheetContent>
-        </Sheet>
+        {SHEET_SIDES.map((left) => (
+          <Sheet key={left}>
+            <SheetTrigger className="align-middle">
+              <AlignJustify />
+            </SheetTrigger>
+            <SheetContent
+              side={left}
+              className="w-full bg-white flex flex-col items-start"
+            >
+              <SheetHeader className="uppercase">
+                <SheetTitle></SheetTitle>
+                <Button asChild variant="ghost">
+                  <Link href="/cart">
+                    <ShoppingCart /> Bag
+                  </Link>
+                </Button>
+                <UserButton />
+                <SheetDescription></SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
         ))}
       </nav>
     </div>

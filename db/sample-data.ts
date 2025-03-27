@@ -19,8 +19,9 @@ const sampleData = {
     {
       name: "Distressed Dyed Denim Jacket",
       slug: "rebel-rebel-distressed-dyed-denim-jacket",
-      category: "Men's Jackets",
+      category: "Men&#39;s Jackets",
       description: "Non-stretch denim jacket that gives off a grunge attitude",
+      blurb: null,
       // An array – A product can have more than one image
       images: [
         "/images/sample-products/p1-1.jpg",
@@ -31,15 +32,16 @@ const sampleData = {
       rating: 4.5,
       numReviews: 10,
       stock: 5,
-      isFeatured: true,
-      banner: "banner-1.jpg",
+      isFeatured: false,
+      banner: null,
     },
     {
       name: "Coral Oversized Stretch T-Shirt",
       slug: "aura-oversized-stretch-tshirt",
-      category: "Men's T-Shirts",
+      category: "Men&#39;s T-Shirts",
       description:
         "Crafted from 100% cotton for premium comfort and breathability",
+      blurb: null,
       images: [
         "/images/sample-products/p2-1.jpg",
         "/images/sample-products/p2-2.jpg",
@@ -49,14 +51,15 @@ const sampleData = {
       rating: 4.2,
       numReviews: 8,
       stock: 10,
-      isFeatured: true,
-      banner: "banner-2.jpg",
+      isFeatured: false,
+      banner: null,
     },
     {
       name: "Green Sweat Pullover Hoodie",
       slug: "caxxual-sweat-pullover-hoodie",
-      category: "Men's Sweatshirts & Hoodies",
+      category: "Men&#39;s Sweatshirts & Hoodies",
       description: "Cotton hoodie with rib-knit cuffs",
+      blurb: null,
       images: [
         "/images/sample-products/p3-1.jpg",
         "/images/sample-products/p3-2.jpg",
@@ -72,8 +75,9 @@ const sampleData = {
     {
       name: "Grey Sleeveless Hoodie",
       slug: "homme-sleeveless-hoodie",
-      category: "Men's Sweatshirts & Hoodies",
+      category: "Men&#39;s Sweatshirts & Hoodies",
       description: "Streamlined design with flexible stretch fabric",
+      blurb: null,
       images: [
         "/images/sample-products/p4-1.jpg",
         "/images/sample-products/p4-2.jpg",
@@ -89,9 +93,10 @@ const sampleData = {
     {
       name: "Pink Turtleneck Blouse",
       slug: "la-jeune-pink-turtleneck-blouse",
-      category: "Women's Blouses",
+      category: "Women&#39;s Blouses",
       description:
         "Casual chic in a semi-sheer viscose-blend long-sleeved blouse",
+      blurb: null,
       images: [
         "/images/sample-products/p5-1.jpg",
         "/images/sample-products/p5-2.jpg",
@@ -107,9 +112,10 @@ const sampleData = {
     {
       name: "Off White Maxie Shirt Dress",
       slug: "villanelle-maxie-shirt-dress",
-      category: "Women's Dresses",
+      category: "Women&#39;s Dresses",
       description:
         "Feel confident in a shirt-style long dress cinched with a waist belt",
+      blurb: null,
       images: [
         "/images/sample-products/p6-1.jpg",
         "/images/sample-products/p6-2.jpg",
@@ -119,15 +125,17 @@ const sampleData = {
       rating: 4.6,
       numReviews: 12,
       stock: 8,
-      isFeatured: true,
+      isFeatured: false,
       banner: null,
     },
     {
       name: "Fitted Tailoured Blazer",
-      slug: "stefani-fitted-tailoured-Blazer",
-      category: "Women's Jackets & Coats",
+      slug: "stefani-fitted-tailoured-blazer",
+      category: "Women&#39;s Jackets & Coats",
       description:
         "Powerful jet-black blazer with welt pockets during business hours",
+      blurb:
+        "Explore the Italian designer&#39;s collection of power suits, featuring sharp tailoring and timeless elegance",
       images: [
         "/images/sample-products/p7-1.jpg",
         "/images/sample-products/p7-2.jpg",
@@ -138,14 +146,15 @@ const sampleData = {
       numReviews: 12,
       stock: 8,
       isFeatured: true,
-      banner: null,
+      banner: "/images/stefani-banner.jpg",
     },
     {
       name: "Off Shoulder Strap Mini Dress",
       slug: "viva-la-diva-off-shoulder-strap-mini-dress",
-      category: "Women's Dresses",
+      category: "Women&#39;s Dresses",
       description:
         "Feel like heaven in an off shoulder mini dress with draping panels",
+      blurb: null,
       images: [
         "/images/sample-products/p8-1.jpg",
         "/images/sample-products/p8-2.jpg",
@@ -155,7 +164,7 @@ const sampleData = {
       rating: 4.6,
       numReviews: 12,
       stock: 8,
-      isFeatured: true,
+      isFeatured: false,
       banner: null,
     },
   ],
