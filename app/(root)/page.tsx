@@ -13,11 +13,13 @@ const Homepage = async () => {
   return (
     <>
       {featuredProducts.length > 0 && (
-        <div className="w-screen h-screen">
+        <div className="h-screen">
           <HeroBanner data={featuredProducts} />
         </div>
       )}
+      <div className="!mt-[-3.5rem]">
       <ProductList data={latestProducts} title="New Arrivals" />
+      </div>
     </>
   );
 };
