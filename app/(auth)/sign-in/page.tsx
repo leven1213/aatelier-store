@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Metadata } from "next"; 
+import { Metadata } from "next";
 import CredentialsSignInForm from "./credentials-signin-form";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
@@ -28,23 +28,26 @@ const SignInPage = async (props: {
   }
 
   return (
-    <div className="bg-gray-100 w-screen flex">
-      <div className="flex-col h-screen">
-        <Header />
+    <>
+      <div className="bg-gray-100 w-screen flex">
+        <div className="flex-col h-screen">
+          <Header />
+        </div>
+        <div className="w-full h-full max-w-lg mx-auto my-auto flex-1 justify-center align-center">
+          <Card className="p-10 bg-[#FFF]">
+            <CardHeader className="space-y-4">
+              <CardTitle className="text-center text-xl">Sign In</CardTitle>
+              <CardDescription className="text-center">
+                Sign in to your account
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CredentialsSignInForm />
+            </CardContent>
+          </Card>
+        </div>
       </div>
-      <div className="w-full h-full max-w-lg mx-auto my-auto flex-1 justify-center align-center">
-          <CardHeader className="space-y-4">
-            <CardTitle className="text-center text-xl">Sign In</CardTitle>
-            <CardDescription className="text-center">
-              Sign in to your account
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <CredentialsSignInForm />
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+    </>
   );
 };
 
