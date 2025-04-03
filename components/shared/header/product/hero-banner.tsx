@@ -11,7 +11,7 @@ const HeroBanner = ({ data }: { data: Product[] }) => {
       {data.map((product: Product) => (
         <div key={product.id} className="absolute inset-0">
           <Link href={`/product/${product.slug}`}>
-            <div className="relative mt-11 w-full h-[93%]">
+            <div className="relative mt-20 w-full h-[87%]">
               
               {/* Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent z-10" />
@@ -21,7 +21,7 @@ const HeroBanner = ({ data }: { data: Product[] }) => {
                 src={product.banner!}
                 alt={product.name}
                 layout="fill" 
-                className="z-0 object-cover object-[70%_100%]"
+                className="z-0 object-cover object-[70%_40%]"
               />
 
               {/* Blurb content */}

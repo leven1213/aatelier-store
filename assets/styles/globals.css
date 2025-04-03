@@ -4,8 +4,8 @@
 
 @layer utilities {
   .wrapper { 
-    max-width: 85rem;
-    padding: 0.5rem;
+    max-width: auto;
+    padding: 1.5rem;
     width: 100%;
   }
 
