@@ -16,7 +16,7 @@ const UserButton = async () => {
 
   if (!session) {
     return (
-      <Button asChild variant={'ghost'}>
+      <Button asChild variant={'ghost'} className="flex items-center justify-center">
         <Link href="/sign-in">
           <UserIcon />
         </Link>

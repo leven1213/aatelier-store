@@ -15,15 +15,19 @@ const SHEET_SIDES = ["left"] as const;
 
 const Menu = () => {
   return (
-    <div className="flex">
-      <nav className="w-full uppercase pr-3 md:pr-0">
+    <div className="flex items-center justify-between">
+      <nav className="w-full flex items-center space-x-3 uppercase pr-3 md:pr-0">
         <UserButton />
+
+        {/* Shopping bag button */}
         <Button asChild variant="ghost">
           <Link href="/cart">
             <ShoppingBag />
           </Link>
         </Button>
       </nav>
+
+      {/* Mobile menu */}
       <nav className="flex items-center md:hidden">
         {SHEET_SIDES.map((left) => (
           <Sheet key={left}>
