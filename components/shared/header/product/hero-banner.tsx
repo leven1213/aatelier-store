@@ -3,16 +3,15 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "@/types";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 const HeroBanner = ({ data }: { data: Product[] }) => {
   return (
-    <div className="w-full">
+    <div className="w-full h-screen absolute inset-0">
       {data.map((product: Product) => (
-        <div key={product.id} className="absolute inset-0">
+        <div key={product.id} className="w-full h-full">
           <Link href={`/product/${product.slug}`}>
-            <div className="relative mt-20 w-full h-[87%]">
-              
+            <div className="relative w-full h-full inset-0 pb-15 md:pb-20">
               {/* Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent z-10" />
 
@@ -20,15 +19,22 @@ const HeroBanner = ({ data }: { data: Product[] }) => {
               <Image
                 src={product.banner!}
                 alt={product.name}
-                layout="fill" 
-                className="z-0 object-cover object-[70%_40%]"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="70% 40%"
+                className="z-0"
               />
 
               {/* Blurb content */}
-              <div className="w-full absolute bottom-0 px-5 py-20 lg:px-24 lg:py-20 text-left text-white z-10 max-w-[1200px] mx-auto">
-                {product.brand && <div className="text-2xl pb-3">New: {product.brand}</div>}
+              <div className="relative z-15 flex flex-col h-full w-full self-center pt-7.5 text-center text-white md:pt-22 justify-end">
+                <h2 className="text-6xl font-extrabold pb-3 uppercase">
+                {product.brand && (
+                  <div className="">
+                    New: {product.brand}
+                  </div>
+                )}
+                </h2>
                 {product.blurb && <div className="pb-5">{product.blurb}</div>}
-                <Button variant="secondary">Shop now</Button>
               </div>
             </div>
           </Link>

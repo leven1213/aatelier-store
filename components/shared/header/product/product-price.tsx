@@ -8,9 +8,9 @@ const ProductPrice = ({ value, className }: {value: number; className?: string; 
     const [intValue, floatValue] = stringValue.split('.');
     
     return ( <p className={cn('', className)}>
-        <span className="">&#36;</span>
+        <span>&#36;</span>
         {intValue}
-        <span className="text-xs align-super">.{floatValue}</span>
+        <span>.{floatValue}</span>
     </p> );
 }
  
