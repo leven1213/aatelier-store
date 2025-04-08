@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 import animatePlugin from "tailwindcss-animate";
+import "tailwindcss";
 
-
-export default {
+const config: Config = {
   darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,17 +11,19 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
+      colors: { 
         background: "hsl(var(--color-background))",
         foreground: "hsl(var(--color-foreground))",
         border: "hsl(var(--color-border))",
         ring: "hsl(var(--color-ring))",
         destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
-  			},
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
       },
     },
-  },  
+  },
   plugins: [animatePlugin],
-} satisfies Config;
+};
+
+export default config;

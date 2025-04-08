@@ -16,7 +16,7 @@ const SHEET_SIDES = ["left"] as const;
 const Menu = () => {
   return (
     <div className="flex items-center justify-between">
-      <nav className="w-full flex items-center space-x-3 uppercase pr-3 md:pr-0">
+      <nav className="w-full flex items-center space-x-3 uppercase pr-6 md:pr-0">
         <UserButton />
 
         {/* Shopping bag button */}

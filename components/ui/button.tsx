@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "justify-center bg-primary text-sm text-primary-foreground shadow-xs hover:bg-primary/90",
         destructive:
-          "justify-center bg-destructive text-sm text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
+          "justify-center bg-destructive text-sm text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20",
         outline:
           "justify-center border border-input bg-background text-sm shadow-xs hover:bg-accent hover:text-accent-foreground",
         secondary:

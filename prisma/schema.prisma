@@ -21,7 +21,7 @@ model Product {
   rating      Decimal  @default(0) @db.Decimal(3, 2)
   stock       Int
   numReviews  Int      @default(0)
-  isFeatured  Boolean  // @default(false)
+  isFeatured  Boolean // @default(false)
   banner      String? // Optional
   createdAt   DateTime @default(now()) @db.Timestamp(6) // Milliseconds with 6 digits, for precision
 }
@@ -40,6 +40,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   account       Account[]
   session       Session[]
+  Cart          Cart[]
 }
 
 model Account {
@@ -63,9 +64,9 @@ model Account {
   @@id([provider, providerAccountId]) // Unique ID when combined (composite key)
 }
 
-model Session { 
+model Session {
   sessionToken String   @id // Foreign key that maps to User model/table
-  userId       String   @db.Uuid 
+  userId       String   @db.Uuid
   expires      DateTime @db.Timestamp(6)
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -77,6 +78,19 @@ model VerificationToken {
   identifier String
   token      String
   expires    DateTime
- 
-  @@id([identifier, token]) 
+
+  @@id([identifier, token])
+}
+
+model Cart {
+  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId        String?  @db.Uuid
+  sessionCartId String
+  items         Json[]   @default([]) @db.Json // Empty array by default
+  itemsPrice    Decimal  @db.Decimal(12, 2) // Up to 12 on left and 2 on right of decimal price
+  totalPrice    Decimal  @db.Decimal(12, 2) // Up to 12 on left and 2 on right of decimal price
+  shippingPrice Decimal  @db.Decimal(12, 2) // Up to 12 on left and 2 on right of decimal price
+  taxPrice      Decimal  @db.Decimal(12, 2) // Up to 12 on left and 2 on right of decimal price
+  createdAt     DateTime @default(now()) @db.Timestamp(6)
+  user          User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
