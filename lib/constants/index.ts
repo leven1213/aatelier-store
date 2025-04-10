@@ -1,4 +1,4 @@
-export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Aatelier';
+export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'AATELIER';
 export const APP_DESCRIPTION = 
     process.env.NEXT_PUBLIC_APP_DESCRIPTION || 
     'Modern multi-brand retailer';

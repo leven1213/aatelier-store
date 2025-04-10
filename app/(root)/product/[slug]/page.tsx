@@ -1,10 +1,11 @@
-import { Badge } from "@/components/ui/badge"; 
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getProductBySlug } from "@/lib/actions/product.actions";
 import { notFound } from "next/navigation";
 import ProductPrice from "@/components/shared/header/product/product-price";
 import ProductImages from "@/components/shared/header/product/product-images";
 import AddToCart from "@/components/shared/header/product/add-to-cart";
+import { getMyCart } from "@/lib/actions/cart.actions";
 
 const ProductDetailsPage = async (props: {
   params: Promise<{ slug: string }>;
@@ -13,6 +14,8 @@ const ProductDetailsPage = async (props: {
 
   const product = await getProductBySlug(slug);
   if (!product) notFound();
+
+  const cart = await getMyCart();
 
   return (
     <>
@@ -35,7 +38,7 @@ const ProductDetailsPage = async (props: {
               </div>
               <p>
                 &#9733; {product.rating} ({product.numReviews} Reviews)
-              </p> 
+              </p>
             </div>
             <div className="mt-10">
               <p className="font-semibold">Item Info</p>
@@ -56,54 +59,59 @@ const ProductDetailsPage = async (props: {
                 <div className="mb-2">
                   <div className="flex justify-between">
                     <div className="block lg:hidden">
-                      <p className="uppercase text-sm md:text-xs">{product.brand}</p>
+                      <p className="uppercase text-sm md:text-xs">
+                        {product.brand}
+                      </p>
                       <h1 className="font-semibold">{product.name}</h1>
                     </div>
                     <div className="text-right">
                       <ProductPrice
                         value={Number(product.price)}
                         className="font-extrabold"
-                      /> 
+                      />
                     </div>
-                  </div> 
+                  </div>
                   {product.stock > 0 ? (
                     <Badge variant="outline">In Stock</Badge>
                   ) : (
                     <Badge variant="destructive">Out of Stock</Badge>
                   )}
-                </div> 
+                </div>
                 {product.stock > 0 && (
                   <div className="flex-center">
-                    <AddToCart item={{
-                      productId: product.id,
-                      name: product.name,
-                      slug: product.slug,
-                      price: product.price,
-                      qty: 1,
-                      image: product.images![0]
-                    }}/>
+                    <AddToCart
+                      cart={cart}
+                      item={{
+                        productId: product.id,
+                        name: product.name,
+                        slug: product.slug,
+                        price: product.price,
+                        qty: 1,
+                        image: product.images![0],
+                      }}
+                    />
                   </div>
                 )}
               </CardContent>
             </Card>
-            
+
             {/* Details Column: Tablet View */}
             <div className="block lg:hidden">
-            <div className="flex flex-col gap-3">
-              <div className="hidden lg:block">
-                <p className="uppercase text-xs">
-                  {product.brand} / {product.category}
+              <div className="flex flex-col gap-3">
+                <div className="hidden lg:block">
+                  <p className="uppercase text-xs">
+                    {product.brand} / {product.category}
+                  </p>
+                  <h1 className="font-semibold">{product.name}</h1>
+                </div>
+                <p>
+                  &#9733; {product.rating} ({product.numReviews} Reviews)
                 </p>
-                <h1 className="font-semibold">{product.name}</h1>
               </div>
-              <p>
-                &#9733; {product.rating} ({product.numReviews} Reviews)
-              </p> 
-            </div>
-            <div className="mt-10">
-              <p className="font-semibold">Item Info</p>
-              <p>{product.description}</p>
-            </div>
+              <div className="mt-10">
+                <p className="font-semibold">Item Info</p>
+                <p>{product.description}</p>
+              </div>
             </div>
           </div>
         </div>

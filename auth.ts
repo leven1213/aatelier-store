@@ -5,8 +5,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { compareSync } from "bcrypt-ts-edge";
 // import type { NextAuthConfig } from "next-auth";
 import { authConfig } from "./auth.config";
-import { cookies } from 'next/headers';
-import { NextResponse } from "next/server";
+// import { cookies } from 'next/headers';
+import { NextResponse } from "next/server"; 
 
 export const config = {
   pages: {

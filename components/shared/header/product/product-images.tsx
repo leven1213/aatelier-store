@@ -15,7 +15,8 @@ const ProductImages = ({ images }: { images: string[] }) => {
           alt="Product image"
           width={1000}
           height={1000}
-          className="min-h-[300px] object-cover object-center hidden lg:flex"
+          className="min-h-[300px] object-cover object-center hidden lg:flex w-auto"
+          priority
         />
       ))}
       <Image
@@ -24,6 +25,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
         width={1000}
         height={1000}
         className="h-[40rem] w-full object-cover object-center lg:hidden"
+        priority
       />
       <div className="flex lg:hidden">
         {images.map((image, index) => (
