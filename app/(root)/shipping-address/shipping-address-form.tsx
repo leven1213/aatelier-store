@@ -105,7 +105,7 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                 )}
               />
             </div>
-            {/* Address field */}
+            {/* City field */}
             <div className="flex flex-col md:flex-row gap-5">
               <FormField
                 control={form.control}
@@ -119,7 +119,7 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className="w-full">
-                    <FormLabel>Address</FormLabel>
+                    <FormLabel>City</FormLabel>
                     <FormControl>
                       <Input placeholder="Enter city" {...field} />
                     </FormControl>
