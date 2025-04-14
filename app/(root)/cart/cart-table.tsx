@@ -5,7 +5,7 @@ import { useTransition } from "react";
 import { addItemToCart, removeItemFromCart } from "@/lib/actions/cart.actions";
 import { Loader, Minus, Plus } from "lucide-react";
 import { Cart } from "@/types";
-import Link from "next/link";
+import { Link } from "@/components/ui/link";
 import Image from "next/image";
 import {
   Table,
@@ -29,7 +29,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
       <h1 className="py-4 h3-bold uppercase">Shopping Bag</h1>
       {!cart || cart.items.length === 0 ? (
         <div>
-          Cart is empty. <Link href="/">Go Shopping</Link>
+          Cart is empty. <Link variant="strong" href="/">Go Shopping</Link>
         </div>
       ) : (
         <div className="grid w-full md:grid-cols-11 md:gap-5 overflow-visible">
